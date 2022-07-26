@@ -97,7 +97,7 @@ class _NoteScreenState extends State<NoteScreen> {
                     itemCount: box.values.length,
                     itemBuilder: (context, index) {
                       int reversedIndex = box.values.length - 1 - index;
-                      final NoteModel? note = box.getAt(reversedIndex);
+                      final NoteModel? note = box.getAt(index);
                       return GestureDetector(
                         onLongPress: () {
                           setState(() {
@@ -129,7 +129,7 @@ class _NoteScreenState extends State<NoteScreen> {
                                             content: note.content,
                                             createdTime: note.createdTime,
                                             checked: note.checked),
-                                        index: reversedIndex,
+                                        index: index,
                                       ),
                                     ),
                                   );
